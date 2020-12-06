@@ -97,10 +97,39 @@
 
 struct IntType
 {
-     int add( int lhs, int rhs);
-     int subtract( int lhs, int rhs);
-     int multiply( int lhs, int rhs);
-     int divide( int lhs, int rhs);
+     int add( int lhs, int rhs)
+     {
+         int x = lhs + rhs;
+         return x;
+     }
+
+     int subtract( int lhs, int rhs)
+     {
+         int x = lhs - rhs;
+         return x;
+     }
+
+     int multiply( int lhs, int rhs)
+     {
+         int x = lhs * rhs;
+         return x;
+     }
+
+     int divide( int lhs, int rhs)
+     {  
+        if(rhs == 0) 
+        {
+            std::cout << "Warning!  Dividing by Zero. Abort! " << std::endl;
+            return 0;
+        }
+        else 
+        {
+            int x = lhs / rhs;
+            return x;
+        }
+         
+     }
+
 };
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
@@ -119,10 +148,52 @@ struct IntType
 
 int main()
 {
+    //Instanciation of UDTs
+   
+    //Floats
+    FloatType ft;
+    auto result = ft.subtract( 3.2f, 23.f );
+    std::cout << "result of ft.subtract is " << result << std::endl;
     FloatType fType;
-    std::cout << "float add " << fType.add( 10.0f, 23.2f) << std::endl;
-    std::cout << "float divide " << fType.divide(5.5f, 0.0f) << std::endl;
+    auto result2 = fType.add( 3.82f, 203.f );
+    std::cout << "result of fType.add is " << result2 << std::endl;
+    FloatType fType2;
+    auto result3 = fType2.multiply( 13.2f, 523.f );
+    std::cout << "result of fType2.multiply is " << result3 << std::endl;
 
-    
+    //Doubles
+    DoubleType dt;
+    auto answer = dt.subtract( 123.4, 567.89 );
+    std::cout << "result of dt.subtract is " << answer << std::endl;
+    DoubleType dType;
+    auto answer2 = dType.multiply( 1923.4, 5167.89 );
+    std::cout << "result of dType.multiply is " << answer2 << std::endl;
+    DoubleType dType2;
+    auto answer3 = dType2.divide( 9123.4, 0.0 );
+    std::cout << "result of dType2.divide is " << answer3 << std::endl;
+
+    //integers
+    IntType it;
+    auto conclusion = it.add( 1230, 567 );
+    std::cout << "result of it.add is " << conclusion << std::endl;
+    IntType iType;
+    auto conclusion2 = iType.divide( 1230, 567 );
+    std::cout << "result of iType.divide is " << conclusion2 << std::endl;
+    IntType iType2;
+    auto conclusion3 = iType2.divide( 1230, 0 );
+    std::cout << "result of iType2.divide is " << conclusion3 << std::endl;
+
+    // testing
+    std::cout << "---------------------------" << std::endl;
+    std::cout << "TESTING AREA " << std::endl;
+    std::cout << "float add " << fType.add( 10.0f, 23.2f ) << std::endl;
+    std::cout << "float divide " << fType.divide( 5.5f, 0.0f ) << std::endl;
+
+    std::cout << "Double subtract " << dType.subtract( 6.578475, 33.6512312 ) << std::endl;
+    std::cout << "Double divide " << dType.divide( 100555.5909288, 0.0 ) << std::endl;
+
+    std::cout << "integer multiply " << iType.multiply( 5, 0 ) << std::endl;
+    std::cout << "integer divide " << iType.divide( 5, 0 ) << std::endl;
+
     std::cout << "good to go!" << std::endl;
 }
