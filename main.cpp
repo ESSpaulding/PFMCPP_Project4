@@ -8,6 +8,7 @@
  Purpose:  This project will take you through the process of writing a class that wraps a numeric type, beginning with writing simple member functions and ending with a fully templated class with lots of functionality. 
  
  1) write 3 UDTs named FloatType, DoubleType, IntType.
+
  
  2) give each UDT the following member functions:
         add( lhs, rhs );
@@ -39,7 +40,68 @@
  
  7) After you finish defining each type/function, click the [run] button.  Clear up any errors or warnings as best you can.
  */
+#include <iostream>
 
+ struct FloatType
+ {
+     float add( float lhs, float rhs)
+     {
+         float x = lhs + rhs;
+         return x;
+     }
+
+     float subtract( float lhs, float rhs)
+     {
+         float x = lhs - rhs;
+         return x;
+     }
+     float multiply( float lhs, float rhs)
+     {
+         float x = lhs * rhs;
+         return x;
+     }
+     float divide( float lhs, float rhs)
+     {
+         if(rhs == 0.0f) std::cout << "Warning!  Dividing by Zero " << std::endl;
+         float x = lhs / rhs;
+         return x;
+     }
+ };
+
+
+
+ struct DoubleType
+ {
+     double add( double lhs, double rhs)
+     {
+         double x = lhs + rhs;
+         return x;
+     }
+     double subtract( double lhs, double rhs)
+     {
+         double x = lhs - rhs;
+         return x;
+     }
+     double multiply( double lhs, double rhs)
+     {
+         double x = lhs * rhs;
+         return x;
+     }
+     double divide( double lhs, double rhs)
+     {
+         double x = lhs / rhs;
+         return x;
+     }
+ };
+
+
+struct IntType
+{
+     int add( int lhs, int rhs);
+     int subtract( int lhs, int rhs);
+     int multiply( int lhs, int rhs);
+     int divide( int lhs, int rhs);
+};
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
@@ -54,8 +116,13 @@
  Wait for my code review.
  */
 
-#include <iostream>
+
 int main()
 {
+    FloatType fType;
+    std::cout << "float add " << fType.add( 10.0f, 23.2f) << std::endl;
+    std::cout << "float divide " << fType.divide(5.5f, 0.0f) << std::endl;
+
+    
     std::cout << "good to go!" << std::endl;
 }
