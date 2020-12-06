@@ -184,7 +184,7 @@ int main()
     std::cout << "result of iType2.divide is " << conclusion3 << std::endl;
 
     // testing
-    std::cout << "---------------------------" << std::endl;
+    std::cout << "----------------------------" << std::endl;
     std::cout << "TESTING AREA " << std::endl;
     std::cout << "float add " << fType.add( 10.0f, 23.2f ) << std::endl;
     std::cout << "float divide " << fType.divide( 5.5f, 0.0f ) << std::endl;
