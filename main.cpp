@@ -96,20 +96,17 @@ good to go!
 struct FloatType
 {
     float add( float lhs, float rhs )
-    {
-        float x = lhs + rhs;
-        return x;
+    {       
+        return lhs + rhs;
     }
     
     float subtract( float lhs, float rhs )
     {
-        float x = lhs - rhs;
-        return x;
+        return lhs - rhs;
     }
     float multiply( float lhs, float rhs )
     {
-        float x = lhs * rhs;
-        return x;
+        return lhs * rhs;
     }
     float divide( float lhs, float rhs )
     {
@@ -118,8 +115,7 @@ struct FloatType
             std::cout << std::endl;
             std::cout << "warning, floating point division by zero returns 'inf' !" << std::endl;
         }
-        float x = lhs / rhs;
-        return x;
+        return lhs / rhs;
     } 
 };
 
@@ -127,18 +123,15 @@ struct DoubleType
 {
     double add( double lhs, double rhs )
     {
-        double x = lhs + rhs;
-        return x;
+        return lhs + rhs;
     }
     double subtract( double lhs, double rhs )
     {
-        double x = lhs - rhs;
-        return x;
+        return lhs - rhs;
     }
     double multiply( double lhs, double rhs )
     {
-        double x = lhs * rhs;
-        return x;
+        return lhs * rhs;
     }
     double divide( double lhs, double rhs )
     {
@@ -147,8 +140,7 @@ struct DoubleType
             std::cout << std::endl;
             std::cout << "warning, floating point division by zero returns 'inf' !" << std::endl;
         }
-        double x = lhs / rhs;
-        return x;
+        return lhs / rhs;
     }
 };
 
@@ -156,18 +148,15 @@ struct IntType
 {
     int add( int lhs, int rhs )
     {
-        int x = lhs + rhs;
-        return x;
+        return lhs + rhs;
     }
     int subtract( int lhs, int rhs )
     {
-        int x = lhs - rhs;
-        return x;
+        return lhs - rhs;
     }
     int multiply( int lhs, int rhs )
     {
-        int x = lhs * rhs;
-        return x;
+        return lhs * rhs;
     }
     int divide( int lhs, int rhs )
     {
@@ -176,12 +165,8 @@ struct IntType
             std::cout << "error, integer division by zero will crash the program!" << std::endl;
             std::cout << "returning lhs" << std::endl;
             return lhs;
-        }
-        else 
-        {
-        int x = lhs / rhs;
-        return x;
-        }
+        }        
+        return lhs / rhs;
     }
 };
 
